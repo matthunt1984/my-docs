@@ -1,0 +1,20 @@
+graph LR
+
+MattPhone --> | text | DropboxApp 
+DropboxApp --> Dropbox[(Dropbox)]
+MattPhone --> DropSync
+DropSync --> Dropbox
+MattPhone --> | Direct upload. Duplicate? | GooglePhotos[(GooglePhotos)]
+
+MaggieLaptop --> MaggieDropbox[(MaggieDropbox)]
+MaggiePhone --> | Dropsync? | MaggieDropbox
+
+Dropbox --> |Videos| DropboxMoviesTemp{{DropboxMoviesTempOnLaptop}}
+DropboxMoviesTemp --> SATA[(SATA Drive??)]
+DropboxMoviesTemp --> GooglePhotos
+
+
+Dropbox --> | manually | ODriveAWS{{ODriveAWS}}
+ODriveAWS --> AmazonCloudDrive[(AmazonCloudDrive)]
+ODriveAWS --> | Via Google Backup and sync | GooglePhotos
+S3[(S3-ForFuture?)]
